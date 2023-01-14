@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My App</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="my.css">
+  </head>
+  <body>
+    <div class="title">
+      <h1>List of my Favorite Things</h1>
+    </div>
+    <div class="form">
+      <form action="javascript:void(0);" method="POST" onsubmit="app.Add()">
+        <input type="text" id="add-thing" placeholder="Thing you really like">
+        <input type="submit" value="Add" class="btn btn-primary">
+      
+        <table>
+          <tr class="my-things">
+            <th>My things:</th>
+          </tr>
+          <tbody id="things">
+
+          </tbody>
+        </table>
+      </form>
+    </div>
+
+    <div id="edit-box" role="aria-hidden">
+      <form action="javascript:void(0);" method="POST" id="save-edit">
+        <!--I found in my research on options doing this project that when I don't use
+        an API I should do this to check the javascript for errors? I wasn't sure because
+      it hasn't been mentioned in class, but I kept it it to be safe.-->
+        <input type="text" id="edit-thing">
+        <input type="submit" value="Save" class="btn btn-success">
+        <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
+        <!--I found the above code online to add the little x next to my edit to close the box-->
+      </form>
+    </div>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="my.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
